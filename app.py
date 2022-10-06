@@ -15,7 +15,7 @@ class Book(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __repr__(self):
-        return '<Task %r>' % self.id
+        return "{title} - {author}".format(title=self.title, author=self.author)
 
 @app.route("/")
 def hello_world():
